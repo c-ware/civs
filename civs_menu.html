@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+	<link rel="stylesheet" href="civs_style.css">
+	<title>C Image Viewing System</title>
+	</head>
+
+	<body>
+		<header><h1>CIVS Test</h1></header>
+
+		<navbar>
+			<center><navboxtitle>Navigation</navboxtitle></center>
+			<navlink><a href="civs_menu.html">Main menu</a></navlink><br>
+			<navlink><a href="civs_gallery.cgi">Gallery</a></navlink><br>
+		</navbar>
+
+		<textsection>
+		<form action="/civs/civs_pick.cgi" method="post">
+			<div>
+				Input the ID of an image: <br>
+				<input name="data" size="16"> <br>
+				<input type="submit" value="Show"> <br>
+			</div>
+		</form>
+		<br>
+		<form action="/civs/civs_pick.cgi" method="post"></form>
+		</textsection>
+
+		<footer>
+			CIVS Test - 6/11/22
+		</footer>
+		
+	</body>
+</html>
