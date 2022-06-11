@@ -1,4 +1,6 @@
 # CIVS
+
+**NOTE: This program is NOT for production use yet! Do not trust it to be secure yet, either!**
 CGI Image Viewing System -- a CGI (not to be confused with computer-generated 
 imagery) photo gallery system written in C.
 
@@ -13,7 +15,9 @@ load and run CGI modules.
 
 
 ## Deployment 
-First, run `make` to compile everything.
+First, run `make` to compile everything. Decide on a HTTP server root path.
+This documentation uses `/srv/http`, with the actual CIVS files at `/srv/http/civs`.
+
 
 ### lighttpd
 
@@ -42,14 +46,14 @@ Append this to your httpd.conf:
     #LoadModule cgid_module modules/mod_cgid.so
 </IfModule>
 
-DocumentRoot "/srv/www/root"
-<Directory "/srv/www">
+DocumentRoot "/srv/http/root"
+<Directory "/srv/http">
     Options Indexes FollowSymLinks
     AllowOverride None
     Require all granted
 </Directory>
 
-<Directory "/srv/www/civs">
+<Directory "/srv/http/civs">
     AllowOverride None
     Options None
     Require all granted
@@ -61,3 +65,9 @@ DocumentRoot "/srv/www/root"
 Now, place the HTML, CSS, and compiled CGI binary files into `/srv/http/civs`,
 and browse to your server's address. You may want to rename `civs_menu.html` to
 `index.html` if you have directory browsing disabled.
+
+## Loading images
+Place some images into `/srv/http/civs/gallery`. You will most likely want to run
+the `rename_images.sh` script in that directory, such that the images have sequential
+filenames. Once you have done that, head to the indexer page (`civs_gallery.cgi`) and
+refresh. You should now see a variety of images. 
