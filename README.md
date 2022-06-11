@@ -12,7 +12,11 @@ load and run CGI modules.
 ## Configuration
 
 
-## Deployment - lighttpd
+## Deployment 
+First, run `make` to compile everything.
+
+### lighttpd
+
 To configure this to run with lighttpd, make sure your lighttpd.conf file has
 these lines in it:
 
@@ -24,6 +28,34 @@ server.modules = ( "mod_alias", "mod_cgi", "mod_redirect", "mod_setenv" )
 $HTTP["url"] =~ "^/civs/" {
         cgi.assign = ( ".cgi" => "" )
 }
+```
+
+### apache2
+
+Append this to your httpd.conf:
+
+```
+<IfModule mpm_prefork_module>
+    LoadModule cgi_module modules/mod_cgi.so
+</IfModule>
+<IfModule !mpm_prefork_module>
+    #LoadModule cgid_module modules/mod_cgid.so
+</IfModule>
+
+DocumentRoot "/srv/www/root"
+<Directory "/srv/www">
+    Options Indexes FollowSymLinks
+    AllowOverride None
+    Require all granted
+</Directory>
+
+<Directory "/srv/www/civs">
+    AllowOverride None
+    Options None
+    Require all granted
+    Options +ExecCGI
+    AddHandler cgi-script .cgi .pl .py .perl .exe
+</Directory>
 ```
 
 Now, place the HTML, CSS, and compiled CGI binary files into `/srv/http/civs`,
