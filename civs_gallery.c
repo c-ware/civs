@@ -22,6 +22,7 @@ int main() {
 	char* name;
 	int breakcounter = -2;
 
+    directoryPath = malloc(strlen(CIVS_FSPATH) + strlen(CIVS_BASEPATH));
 	sprintf(directoryPath, "%s/%s", CIVS_FSPATH, CIVS_BASEPATH);
 
 	/* The header */

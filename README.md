@@ -64,9 +64,11 @@ DocumentRoot "/srv/http/root"
 ```
 
 Now, place the HTML, CSS, and compiled CGI binary files into `/srv/http/civs`,
-and browse to your server's address. You may want to rename `civs_menu.html` to
-`index.html` if you have directory browsing disabled. This can be done automatically
-with `make install`. 
+and browse to your server's address. You can rename `civs_menu.html` to
+`index.html` if you have directory browsing disabled.
+If you renamed `civs_menu.html`, you will need to update the links
+on ALL of the pages, some of which are CGI-generated. It is recommended that you do NOT
+rename it. You can automate the install using `make install`.
 
 ## Loading images
 Place some images into `/srv/http/civs/gallery`. You will most likely want to run
@@ -76,5 +78,5 @@ refresh. You should now see a variety of images.
 
 ## Getting to CIVS
 After you've started your HTTP server (search online to figure this one out), go to
-`http://localhost:80/civs/civs_menu.html` or possibly `index.html` to access CIVS. Click
+`http://localhost:80/civs/civs_menu.html` to access CIVS. Click
 on the Gallery button and see what you get.
