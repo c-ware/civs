@@ -73,3 +73,8 @@ Place some images into `/srv/http/civs/gallery`. You will most likely want to ru
 the `rename_images.sh` script in that directory, such that the images have sequential
 filenames. Once you have done that, head to the indexer page (`civs_gallery.cgi`) and
 refresh. You should now see a variety of images. 
+
+## Getting to CIVS
+After you've started your HTTP server (search online to figure this one out), go to
+`http://localhost:80/civs/civs_menu.html` or possibly `index.html` to access CIVS. Click
+on the Gallery button and see what you get.
