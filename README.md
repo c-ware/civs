@@ -17,6 +17,7 @@ load and run CGI modules.
 ## Deployment 
 First, run `make` to compile everything. Decide on a HTTP server root path.
 This documentation uses `/srv/http`, with the actual CIVS files at `/srv/http/civs`.
+You can use `make install` to install the files to the default directory.
 
 
 ### lighttpd
@@ -64,7 +65,8 @@ DocumentRoot "/srv/http/root"
 
 Now, place the HTML, CSS, and compiled CGI binary files into `/srv/http/civs`,
 and browse to your server's address. You may want to rename `civs_menu.html` to
-`index.html` if you have directory browsing disabled.
+`index.html` if you have directory browsing disabled. This can be done automatically
+with `make install`. 
 
 ## Loading images
 Place some images into `/srv/http/civs/gallery`. You will most likely want to run
