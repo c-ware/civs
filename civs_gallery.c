@@ -23,7 +23,7 @@ int main() {
 	int breakcounter = -2;
 
     directoryPath = malloc(strlen(CIVS_FSPATH) + strlen(CIVS_BASEPATH));
-	sprintf(directoryPath, "%s/%s", CIVS_FSPATH, CIVS_BASEPATH);
+	sprintf(directoryPath, "%s%s", CIVS_FSPATH, CIVS_BASEPATH);
 
 	/* The header */
 	printf("%s%c%c\n", "Content-Type:text/html;charset=iso-8859-1", 13, 10);
