@@ -12,7 +12,9 @@ To properly install CIVS, you will need to configure your HTTP server to
 load and run CGI modules.
 
 ## Configuration
-
+Edit the Makefile, and note all of the comments that are present. You will need
+to edit the document root path, CIVS gallery filesystem path, and possibly
+other items. 
 
 ## Deployment 
 First, run `make` to compile everything. Decide on a HTTP server root path.

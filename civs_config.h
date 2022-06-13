@@ -4,13 +4,17 @@
 /* The maximum length of a filename */
 #define CIVS_NAMELEN 16
 
-/* The HTTP document path to this file */
+/* The HTTP document path to this file 
+ * This is relative to the HTTP server's document root path.
+ * So, if your document root is /srv/http, this path expands to
+ * /srv/http/civs/gallery.
+ */
 #define CIVS_BASEPATH "/civs/gallery/"
 
-/* The actual filesystem path -- same as the HTTP server's document root setting */
+/* The filesystem path, same as the HTTP server's document root directory. */
 #define CIVS_FSPATH "/srv/http"
 
-/* HTTP root path to the stylesheet */
+/* HTTP root-relative path to the stylesheet */
 #define CIVS_CSS "/civs/civs_style.css"
 
 /* Valid file suffixes */
